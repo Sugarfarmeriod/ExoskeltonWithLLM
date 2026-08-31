@@ -1,0 +1,37 @@
+{
+  "trial_id": "debug_slrt_mat_playback_001",
+  "application": "slrt_mat_playback",
+  "target_name": "TargetPC1",
+  "import_time": "2026-06-29 22:56:13 +0800",
+  "source_start_date": "2015-06-12 22:42:27",
+  "source_size_mb": 0.0264739990234375,
+  "subject_id": "",
+  "affected_side": "",
+  "parameter_snapshot_path": "",
+  "filelog_run_id": 14,
+  "dataset_mat": "D:\\Workspace\\projects\\codex\\ExoskeltonWithLLM\\data\\raw\\debug_slrt_mat_playback_001\\filelog_dataset.mat",
+  "signals_long_csv": "D:\\Workspace\\projects\\codex\\ExoskeltonWithLLM\\data\\raw\\debug_slrt_mat_playback_001\\signals_long.csv",
+  "signals_wide_csv": "D:\\Workspace\\projects\\codex\\ExoskeltonWithLLM\\data\\raw\\debug_slrt_mat_playback_001\\signals_wide_if_aligned.csv",
+  "signals_are_time_aligned": true,
+  "signal_count": 3,
+  "signals": [
+    {
+      "name": "replay_left_torque_filelog",
+      "sample_count": 694,
+      "start_time": 0,
+      "end_time": 6.93
+    },
+    {
+      "name": "replay_phi_filelog",
+      "sample_count": 694,
+      "start_time": 0,
+      "end_time": 6.93
+    },
+    {
+      "name": "replay_right_torque_filelog",
+      "sample_count": 694,
+      "start_time": 0,
+      "end_time": 6.93
+    }
+  ]
+}

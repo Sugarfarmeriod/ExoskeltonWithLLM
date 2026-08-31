@@ -1,0 +1,1 @@
+{"model_checksum":[0,0,0,0],"num_entries":2,"channels":[{"tid":0,"data_size":16,"decimation":1,"entries":[{"address":2120544,"size":8,"blockpath":"slrt_filelog_minimal/clock_file_log/clock_source","portnumber":0},{"address":2120552,"size":8,"blockpath":"slrt_filelog_minimal/sine_file_log/sine_source","portnumber":0}]}]}

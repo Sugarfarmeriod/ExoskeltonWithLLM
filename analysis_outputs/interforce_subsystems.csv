@@ -1,0 +1,106 @@
+Subsystem,DirectChildBlocks
+TestStructure/InterForceControlTask,28
+TestStructure/InterForceControlTask/AO,23
+TestStructure/InterForceControlTask/AO/ColdStartEventGate,0
+TestStructure/InterForceControlTask/AO/Filter,6
+TestStructure/InterForceControlTask/AO/MATLAB Function,0
+TestStructure/InterForceControlTask/AO/PhaseCorrection,14
+TestStructure/InterForceControlTask/AO/PhaseCorrection/If Action
+Subsystem,3
+TestStructure/InterForceControlTask/AO/PhaseCorrection/If Action
+Subsystem1,3
+TestStructure/InterForceControlTask/AO/PhaseCorrection/MATLAB Function,0
+TestStructure/InterForceControlTask/AO/PhaseCorrection/MATLAB Function1,0
+TestStructure/InterForceControlTask/AO/PhaseCorrection/MATLAB Function2,0
+TestStructure/InterForceControlTask/AO/Select,28
+TestStructure/InterForceControlTask/AO/Select/Edge
+Detector,0
+TestStructure/InterForceControlTask/AO/Select/Edge
+Detector/Check Signal
+Attributes,0
+TestStructure/InterForceControlTask/AO/Select/Edge
+Detector/Check Signal
+Attributes1,0
+TestStructure/InterForceControlTask/AO/Select/Edge
+Detector/Check Signal
+Attributes2,0
+TestStructure/InterForceControlTask/AO/Select/If Action
+Subsystem,13
+TestStructure/InterForceControlTask/AO/Select/If Action
+Subsystem/If Action
+Subsystem,5
+TestStructure/InterForceControlTask/AO/Select/If Action
+Subsystem/If Action
+Subsystem1,5
+TestStructure/InterForceControlTask/AO/Select/If Action
+Subsystem1,7
+TestStructure/InterForceControlTask/AO/Select/MATLAB Function1,0
+TestStructure/InterForceControlTask/AO/Subsystem1,9
+TestStructure/InterForceControlTask/AO/Subsystem1/Detector1,14
+TestStructure/InterForceControlTask/AO/Subsystem1/Detector1/VoltageToFootLoad,0
+TestStructure/InterForceControlTask/DMP,40
+TestStructure/InterForceControlTask/DMP/Detect Rise
+Positive1,0
+TestStructure/InterForceControlTask/DMP/Detect Rise
+Positive1/Positive,0
+TestStructure/InterForceControlTask/DMP/Detect Rise
+Positive2,0
+TestStructure/InterForceControlTask/DMP/Detect Rise
+Positive2/Positive,0
+TestStructure/InterForceControlTask/DMP/Detect Rise
+Positive3,0
+TestStructure/InterForceControlTask/DMP/Detect Rise
+Positive3/Positive,0
+TestStructure/InterForceControlTask/DMP/MATLAB Function3,0
+TestStructure/InterForceControlTask/DMP/MATLAB Function6,0
+TestStructure/InterForceControlTask/DMP/MATLAB Function8,0
+TestStructure/InterForceControlTask/DMP/ParamLatch,3
+TestStructure/InterForceControlTask/DMP/Phase_shifter,0
+TestStructure/InterForceControlTask/DMP/Subsystem,16
+TestStructure/InterForceControlTask/DMP/Subsystem/DelaySamplesFromPrev,0
+TestStructure/InterForceControlTask/DMP/Subsystem/EventDelay,0
+TestStructure/InterForceControlTask/DMP/Subsystem/PhiOmega_DelayRebuild,0
+TestStructure/InterForceControlTask/DMP/cuur_params1,34
+TestStructure/InterForceControlTask/FootSwitch,11
+TestStructure/InterForceControlTask/TorqueController,29
+TestStructure/InterForceControlTask/TorqueController/Filter1,6
+TestStructure/InterForceControlTask/TorqueController/If Action
+Subsystem1,3
+TestStructure/InterForceControlTask/TorqueController/If Action
+Subsystem_activity_on,3
+TestStructure/InterForceControlTask/TorqueController/MATLAB Function1,0
+TestStructure/InterForceControlTask/TorqueController/MATLAB Function2,0
+TestStructure/InterForceControlTask/TorqueController/MATLAB Function3,0
+TestStructure/InterForceControlTask/TorqueController/Subsystem2,21
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/Buffer Function,0
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/Discrete Derivative,0
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/Function-Call
+Subsystem,3
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/Function-Call
+Subsystem1,3
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/Function-Call
+Subsystem2,3
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/If Action
+Subsystem2,13
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/If Action
+Subsystem2/Function-Call
+Subsystem,3
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/If Action
+Subsystem2/Function-Call
+Subsystem1,3
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/If Action
+Subsystem2/Function-Call
+Subsystem2,3
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/If Action
+Subsystem2/MATLAB Function1,0
+TestStructure/InterForceControlTask/TorqueController/Subsystem2/If Action
+Subsystem3,5
+TestStructure/InterForceControlTask/TorqueController/TorqueManager,21
+TestStructure/InterForceControlTask/TorqueController/TorqueManager/activity <= 0,0
+TestStructure/InterForceControlTask/TorqueController/TorqueManager/if activity,0
+TestStructure/InterForceControlTask/TorqueController/TorqueManager/prev_activity > 0,0
+TestStructure/InterForceControlTask/TorqueController/TorqueManager/prev_peak <= 0.5,0
+TestStructure/InterForceControlTask/TorqueController/TorqueManager/valid_peak > 0.5,0
+TestStructure/InterForceControlTask/Torque_Guard,17
+TestStructure/InterForceControlTask/Torque_Guard/LimitProtect,22
+TestStructure/InterForceControlTask/Torque_Guard/MinimumTauGate,5

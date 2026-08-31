@@ -1,0 +1,19 @@
+{
+  "trial_id": "synthetic_trial_001",
+  "application": "synthetic_fixture",
+  "target_name": "offline",
+  "affected_side": "right",
+  "subject_id": "fixture_subject",
+  "signals_are_time_aligned": true,
+  "import_time": "2026-06-30 00:00:00 +0800",
+  "source_start_date": "synthetic",
+  "parameter_snapshot_path": "",
+  "parameters": {
+    "Amplitude": 1.0,
+    "tau": 1.0,
+    "phase_offset": 0.0,
+    "MO_Kp": 20.0,
+    "MO_Kd": 1.5,
+    "MO_OverwriteKpGain": 1.0
+  }
+}

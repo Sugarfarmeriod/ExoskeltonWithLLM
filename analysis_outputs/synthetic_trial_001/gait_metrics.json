@@ -1,0 +1,86 @@
+{
+  "trial": {
+    "trial_id": "synthetic_trial_001",
+    "application": "synthetic_fixture",
+    "affected_side": "right",
+    "source_csv": "data\\fixtures\\synthetic_trial_001\\signals_wide.csv",
+    "sample_count": 11,
+    "duration_seconds": 1.0
+  },
+  "config": {
+    "foot_contact_threshold": 0.5,
+    "phase_event_threshold": 0.5,
+    "min_valid_cycles": 1,
+    "min_cycle_duration": 0.4,
+    "max_cycle_duration": 2.5
+  },
+  "events": {
+    "foot_contact": [
+      {
+        "time": 0.0,
+        "type": "contact_on",
+        "source": "foot-load-derived",
+        "threshold": 0.5
+      },
+      {
+        "time": 0.4,
+        "type": "contact_off",
+        "source": "foot-load-derived",
+        "threshold": 0.5
+      },
+      {
+        "time": 0.8,
+        "type": "contact_on",
+        "source": "foot-load-derived",
+        "threshold": 0.5
+      }
+    ],
+    "phase0": [
+      {
+        "time": 0.0,
+        "sample_index": 0,
+        "source": "phase0-event-derived",
+        "threshold": 0.5
+      },
+      {
+        "time": 1.0,
+        "sample_index": 10,
+        "source": "phase0-event-derived",
+        "threshold": 0.5
+      }
+    ]
+  },
+  "cycles": [
+    {
+      "cycle_index": 0,
+      "start_time": 0.0,
+      "end_time": 1.0,
+      "start_sample_index": 0,
+      "end_sample_index": 10,
+      "duration_seconds": 1.0,
+      "is_valid": true,
+      "quality_notes": []
+    }
+  ],
+  "reference": {
+    "type": "in_trial_reference",
+    "q_ref_field": "q_ref",
+    "dq_ref_field": "dq_ref",
+    "notes": "First implementation uses the reference trajectory exported with the trial."
+  },
+  "metrics": {
+    "tracking_rmse": 0.03128607009226602,
+    "peak_flexion_error": -0.020000000000000018,
+    "phase_delay_seconds": 0.0,
+    "torque_peak_abs": 1.45,
+    "torque_rms": 0.9807371995317882,
+    "torque_limit_ratio": 0.18125
+  },
+  "quality": {
+    "is_usable_for_parameter_suggestion": true,
+    "valid_cycle_count": 1,
+    "min_valid_cycles": 1,
+    "warnings": []
+  },
+  "unavailable_fields": {}
+}

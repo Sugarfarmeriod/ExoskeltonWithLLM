@@ -1,0 +1,193 @@
+Input MAT: D:\Workspace\projects\codex\ExoskeltonWithLLM\data\inbox\20260610-male-2.mat
+Dataset elements: 62
+replay_phi from element 12: n=12001 t=[0,12]
+replay_left_torque from element 37: n=12001 t=[0,12]
+replay_right_torque from element 38: n=12001 t=[0,12]
+Created MAT playback model: D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback.slx
+    State: IDLE
+    Error: ''
+
+--- Build application ---
+### 正在启动 slrt_mat_playback 的编译过程
+### Invoking custom build hook: CodeGenEntry
+### 正在为 '模型特定' 文件夹结构生成代码和工件
+### 正在将代码生成到编译文件夹中: D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw
+### Invoking custom build hook: CodeGenBeforeTLC
+### Invoking Target Language Compiler on slrt_mat_playback.rtw
+### Using System Target File: D:\Project\MatlabR2023b\toolbox\slrealtime\simulink\coder\rtw\slrealtime.tlc
+### Loading TLC function libraries
+.......
+### Generating TLC interface API for custom data
+....
+### Initial pass through model to cache user defined code
+.
+### Caching model source code
+...................................................
+### Writing header file slrt_mat_playback_types.h
+### Writing header file slrt_mat_playback.h
+### Writing header file rtwtypes.h
+### Writing header file multiword_types.h
+### Writing header file slrt_mat_playback_cal.h
+.
+### Writing source file slrt_mat_playback.cpp
+### Writing header file slrt_mat_playback_private.h
+### Writing header file rtmodel.h
+### Writing source file slrt_mat_playback_cal.cpp
+### Writing header file rt_nonfinite.h
+### Writing source file rt_nonfinite.cpp
+.
+### Writing header file rtGetInf.h
+### Writing source file rtGetInf.cpp
+### Writing header file rtGetNaN.h
+### Writing source file rtGetNaN.cpp
+### TLC code generation complete (took 3.202s).
+### Creating slrealtime_task_info.m
+.### Invoking custom build hook: CodeGenAfterTLC
+### 正在保存二进制信息缓存。
+### Invoking custom build hook: CodeGenBeforeMake
+### 使用工具链: Simulink Real-Time Toolchain
+### 正在创建 'D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented\slrt_mat_playback.mk'...
+### 正在编译 'slrt_mat_playback': make  -f slrt_mat_playback.mk all
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>call "C:\ProgramData\MATLAB\SupportPackages\R2023b\toolbox\slrealtime\target\supportpackage\qnx710\qnxsdp-env.bat"  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set QNX_BASE=C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710/  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set QNX_TARGET=C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710//target/qnx7  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set QNX_HOST=C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710//host/win64/x86_64  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set QNX_CONFIGURATION_EXCLUSIVE=C:\Users\Administrator/.qnx  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set QNX_CONFIGURATION=C:\Users\Administrator/.qnx  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set MAKEFLAGS=-IC:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710//target/qnx7/usr/include  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set PATH=C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710//host/win64/x86_64/usr/bin;C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710//jre/bin;C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710//host/common/bin;D:\Project\MatlabR2023b\bin\win64;C:\Users\Administrator\.codex\tmp\arg0\codex-arg0s6WmYA;C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\dotnet\;C:\Program Files\Git\cmd;D:\Project\MatlabR2023b\runtime\win64;D:\Project\MatlabR2023b\bin;C:\Program Files\cursor\resources\app\bin;C:\Program Files\WireGuard\;C:\Program Files\Go\bin;C:\Program Files\nodejs\;C:\Program Files\GitHub CLI\;C:\Users\Administrator\.ccwhat\venv\Scripts;C:\Users\Administrator\AppData\Local\Programs\OpenAI\CodexCLI;C:\Users\Administrator\.ccwhat\bin;C:\Users\Administrator\.cargo\bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python313\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Tencent\QQGameTempest\Hall.57967\;C:\Users\Administrator\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\Administrator\.local\bin;C:\Users\Administrator\go\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\OpenAI\Codex\bin\ada252862d154cdd;C:\Program Files\WindowsApps\OpenAI.Codex_26.623.8305.0_x64__2p2nqsd0c76g0\app\resources  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set PYTHONDONTWRITEBYTECODE=1  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set TMPDIR=C:\Users\ADMINI~1\AppData\Local\Temp  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>if exist C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710/\license-env.bat C:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/slrealtime/target/supportpackage/qnx710/\license-env.bat 
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>REM Checking license  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set QNX_LICENSE_FILE_LOCATION=C:\Users\Administrator\.qnx\license\  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set QNX_LICENSE_FILE=C:\Users\Administrator\.qnx\license\licenses  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>set QNX_LICENSE_SOURCE_FILE=C:\ProgramData\MATLAB\SupportPackages\R2023b\toolbox\slrealtime\target\supportpackage\qnx710\license\licenses  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>IF NOT EXIST C:\Users\Administrator\.qnx\license\licenses (xcopy C:\ProgramData\MATLAB\SupportPackages\R2023b\toolbox\slrealtime\target\supportpackage\qnx710\license\licenses C:\Users\Administrator\.qnx\license\ /s /i /Y )  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>cd .  
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>if "all" == "" (make  -f slrt_mat_playback.mk all )  else (make  -f slrt_mat_playback.mk all )  
+qcc -c -Vgcc_ntox86_64 -g -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o rt_matrx.o D:/Project/MATLAB~1/rtw/c/src/rt_matrx.c 
+qcc -c -Vgcc_ntox86_64 -g -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o rt_printf.o D:/Project/MATLAB~1/rtw/c/src/rt_printf.c 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o rtGetInf.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/rtGetInf.cpp 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o rtGetNaN.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/rtGetNaN.cpp 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o rt_nonfinite.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/rt_nonfinite.cpp 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o slrealtime_datatype_ground.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/slrealtime_datatype_ground.cpp 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o slrt_mat_playback.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/slrt_mat_playback.cpp 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o slrt_mat_playback_cal.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/slrt_mat_playback_cal.cpp 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o rte_slrt_mat_playback_parameters.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/rte_slrt_mat_playback_parameters.cpp 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o main.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/main.cpp 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o slrealtimeenablelogging.o D:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/slrealtimeenablelogging.cpp 
+qcc -c -Vgcc_ntox86_64 -g -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o host_timer_x86.o D:/Project/MATLAB~1/toolbox/coder/profile/src/host_timer_x86.c 
+q++ -c -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -O2 -fwrapv -DSIMULINK_REAL_TIME -D_QNX_SOURCE -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DMAT_FILE=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0  -DTID01EQ=1 -DMODEL=slrt_mat_playback -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DRT -DUSE_RTMODEL -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw -ID:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/include -ID:/Project/MATLAB~1/toolbox/slrealtime/target/kernel/dist/include -ID:/Project/MATLAB~1/extern/include -ID:/Project/MATLAB~1/simulink/include -ID:/Project/MATLAB~1/rtw/c/src -ID:/Project/MATLAB~1/rtw/c/src/ext_mode/common -ID:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented -o slrealtime_code_profiling_utility_functions.o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/instrumented/slrealtime_code_profiling_utility_functions.cpp 
+### Creating standalone executable D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/slrt_mat_playback ...
+q++ -Vgcc_ntox86_64 -g -std=gnu++14 -stdlib=libstdc++ -o D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/slrt_mat_playback rt_matrx.o rt_printf.o rtGetInf.o rtGetNaN.o rt_nonfinite.o slrealtime_datatype_ground.o slrt_mat_playback.o slrt_mat_playback_cal.o rte_slrt_mat_playback_parameters.o main.o slrealtimeenablelogging.o host_timer_x86.o slrealtime_code_profiling_utility_functions.o -Wl,--start-group D:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/win64/lib/libecatinterface_slrt_x64.a D:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/win64/lib/libEcMaster_slrt_x64.a D:/Project/MATLAB~1/toolbox/slrealtime/simulink/blocks/dist/win64/lib/libslrealtime_libsrc_pervar_slrt_x64.a -Wl,--end-group  -LD:/Project/MATLAB~1/toolbox/slrealtime/target/win64/target/lib -ltraceparser -lpps -lslrealtime_kernel -lslrealtime_platform -lslrealtime_rtps -lsocket -lboost_system -lboost_log -lpci -lopenblas -lpcap 
+### Created: D:/Workspace/projects/codex/ExoskeltonWithLLM/tools/generated/slrt_mat_playback_slrealtime_rtw/slrt_mat_playback
+### Successfully generated all binary outputs.
+ 
+D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_slrealtime_rtw\instrumented>exit /B 0  
+### Invoking custom build hook: CodeGenAfterMake
+### Successful completion of build procedure for: slrt_mat_playback
+### Created MLDATX ..\slrt_mat_playback.mldatx
+### Invoking custom build hook: CodeGenExit
+### 'slrt_mat_playback' 的 Simulink 缓存工件是在 'D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback.slxc' 中创建的。
+
+编译摘要
+
+编译的顶层模型目标:
+
+模型                 操作           重新编译原因     
+===========================================
+slrt_mat_playback  代码已生成并完成编译。  生成的代码已过期。  
+
+编译了 1 个模型，共 1 个模型(0 个模型已经是最新的)
+编译持续时间: 0h 0m 31.806s
+--- Load application to target ---
+                     State: LOADED
+               Application: 'slrt_mat_playback'
+                 ModelName: 'slrt_mat_playback'
+                     Error: ''
+                  LogLevel: "info"
+          PollingThreshold: 1.0000e-04
+            FileLogMaxRuns: 5
+    OverrideBaseRatePeriod: 0
+                  StopTime: 12
+                  ExecTime: 0
+                   TETInfo: [1x1 struct]
+
+--- Start application ---
+poll 01 t=0.25 replay_phi=0 replay_left_torque=2.49556 replay_right_torque=0.235311
+poll 02 t=0.50 replay_phi=0 replay_left_torque=2.38869 replay_right_torque=-0.0224992
+poll 03 t=0.75 replay_phi=0 replay_left_torque=2.4528 replay_right_torque=-0.36237
+poll 04 t=1.00 replay_phi=0 replay_left_torque=2.23138 replay_right_torque=0.160252
+poll 05 t=1.25 replay_phi=0 replay_left_torque=2.32693 replay_right_torque=-0.062695
+poll 06 t=1.50 replay_phi=0 replay_left_torque=2.49843 replay_right_torque=0.0920947
+poll 07 t=1.75 replay_phi=0 replay_left_torque=2.16496 replay_right_torque=-0.264896
+poll 08 t=2.00 replay_phi=0 replay_left_torque=2.17878 replay_right_torque=-0.292767
+poll 09 t=2.25 replay_phi=0 replay_left_torque=2.37305 replay_right_torque=-0.308383
+poll 10 t=2.50 replay_phi=0 replay_left_torque=2.23278 replay_right_torque=-0.0199308
+poll 11 t=2.75 replay_phi=0 replay_left_torque=2.201 replay_right_torque=-0.406433
+poll 12 t=3.00 replay_phi=0 replay_left_torque=2.22993 replay_right_torque=-0.214132
+poll 13 t=3.25 replay_phi=0 replay_left_torque=1.99611 replay_right_torque=-0.424243
+poll 14 t=3.50 replay_phi=0 replay_left_torque=2.19249 replay_right_torque=-0.413936
+poll 15 t=3.75 replay_phi=0 replay_left_torque=2.21133 replay_right_torque=-0.182524
+poll 16 t=4.00 replay_phi=0 replay_left_torque=2.76446 replay_right_torque=0.285801
+poll 17 t=4.25 replay_phi=0 replay_left_torque=2.72169 replay_right_torque=-0.300274
+poll 18 t=4.50 replay_phi=0 replay_left_torque=2.75888 replay_right_torque=0.074544
+poll 19 t=4.75 replay_phi=0 replay_left_torque=2.95302 replay_right_torque=-0.497276
+poll 20 t=5.00 replay_phi=0 replay_left_torque=2.80943 replay_right_torque=-0.374154
+Saved polling CSV: D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_polled_samples.csv
+--- Stop application ---
+  Importing Log file 1 of 1 ...
+    State: IDLE
+    Error: ''
+
+                     State: DONE
+               Application: 'slrt_mat_playback'
+                 ModelName: 'slrt_mat_playback'
+                     Error: ''
+                  LogLevel: "info"
+          PollingThreshold: 1.0000e-04
+            FileLogMaxRuns: 5
+    OverrideBaseRatePeriod: 0
+                  StopTime: 12
+                  ExecTime: 6.9160
+                   TETInfo: [1x1 struct]
+
+--- File Log import/export ---
+  FileLogger - 属性:
+
+    LoggingService: STOPPED
+     DataAvailable: 1
+
+               Application               StartDate         Size (in MB)
+          ______________________    ___________________    ____________
+
+    1.    "slrt_filelog_minimal"    2015-06-12 22:40:13        0.15262 
+    2.    "slrt_filelog_smoke"      2015-06-12 17:41:56     3.8147e-05 
+    3.    "slrt_mat_playback"       2015-06-12 22:42:27       0.026474 
+
+  Importing Log file 1 of 1 ...
+Saved File Log dataset: D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_filelog_dataset.mat
+Saved File Log CSV: D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_filelog_export.csv
+filelog replay_left_torque_filelog n=694
+filelog replay_phi_filelog n=694
+filelog replay_right_torque_filelog n=694
+Diary written to: D:\Workspace\projects\codex\ExoskeltonWithLLM\tools\generated\slrt_mat_playback_diary.txt

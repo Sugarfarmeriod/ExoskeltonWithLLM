@@ -1,0 +1,21 @@
+{
+  "trial_id": "synthetic_trial_001",
+  "application": "synthetic_fixture",
+  "affected_side": "right",
+  "source_csv": "data\\fixtures\\synthetic_trial_001\\signals_wide.csv",
+  "sample_count": 11,
+  "duration_seconds": 1.0,
+  "signals": [
+    "time",
+    "q_meas",
+    "dq_meas",
+    "q_ref",
+    "dq_ref",
+    "feet_load",
+    "phi",
+    "phase0_event",
+    "tau_e",
+    "safe_torque",
+    "assist_enabled"
+  ]
+}

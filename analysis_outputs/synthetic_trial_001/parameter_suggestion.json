@@ -1,0 +1,57 @@
+{
+  "trial": {
+    "trial_id": "synthetic_trial_001",
+    "application": "synthetic_fixture",
+    "affected_side": "right"
+  },
+  "source_metrics": {
+    "valid_cycle_count": 1,
+    "phase_delay_seconds": 0.0,
+    "peak_flexion_error": -0.020000000000000018,
+    "tracking_rmse": 0.03128607009226602,
+    "torque_limit_ratio": 0.18125
+  },
+  "thresholds": {
+    "min_valid_cycles": 1,
+    "phase_delay_seconds": 0.05,
+    "peak_flexion_error": 0.05,
+    "tracking_rmse": 0.08,
+    "torque_limit_veto_ratio": 0.85,
+    "torque_limit_reduce_ratio": 0.95
+  },
+  "global_vetoes": [],
+  "suggestions": {
+    "phase_offset": {
+      "rule_id": "RULE_PHASE_WITHIN_BAND_HOLD",
+      "action": "hold",
+      "veto_reasons": [],
+      "rationale": ""
+    },
+    "Amplitude": {
+      "rule_id": "RULE_AMP_WITHIN_BAND_HOLD",
+      "action": "hold",
+      "veto_reasons": [],
+      "rationale": ""
+    },
+    "assist_gain": {
+      "rule_id": "RULE_ASSIST_WITHIN_BAND_HOLD",
+      "action": "hold",
+      "veto_reasons": [],
+      "rationale": ""
+    },
+    "MO_Kp": {
+      "rule_id": "RULE_KP_WITHIN_BAND_HOLD",
+      "action": "hold",
+      "veto_reasons": [],
+      "rationale": ""
+    },
+    "MO_Kd": {
+      "rule_id": "RULE_KD_WITHIN_BAND_HOLD",
+      "action": "hold",
+      "veto_reasons": [],
+      "rationale": ""
+    }
+  },
+  "human_confirmation_required": true,
+  "control_boundary": "Suggestions are offline advisory actions only; they must not be written to Speedgoat or Simulink automatically."
+}

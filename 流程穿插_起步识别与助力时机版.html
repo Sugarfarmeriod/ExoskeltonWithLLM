@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>起步识别与助力时机版</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      mermaid.initialize({
+        startOnLoad: true,
+        securityLevel: "loose",
+        theme: "base",
+        themeVariables: {
+          primaryColor: "#eef6ff",
+          primaryTextColor: "#172033",
+          primaryBorderColor: "#2f6f9f",
+          lineColor: "#667085",
+          secondaryColor: "#f1f8f4",
+          tertiaryColor: "#fff8e8",
+          fontFamily: "Inter, Microsoft YaHei, Segoe UI, Arial, sans-serif"
+        }
+      });
+    });
+  </script>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --blue: #2463a6;
+      --green: #16824a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    main { max-width: 1320px; margin: 0 auto; padding: 24px; }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 22px rgba(16, 24, 40, 0.06);
+    }
+    h1 { margin: 0; font-size: 24px; letter-spacing: 0; }
+    h2 { margin: 0 0 14px; font-size: 20px; }
+    p { margin: 0 0 10px; }
+    code { background: #eef2f7; padding: 2px 5px; border-radius: 4px; }
+    ul { margin: 8px 0 0 20px; padding: 0; }
+    .lead {
+      border-left: 6px solid var(--green);
+      background: #f0fbf4;
+      padding: 18px 20px;
+    }
+    .lead p {
+      margin: 8px 0 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcfe;
+    }
+    .card strong { display: block; margin-bottom: 6px; color: var(--blue); }
+    .mermaid {
+      background: #fbfcfe;
+      border: 1px solid #e5eaf2;
+      border-radius: 8px;
+      padding: 14px;
+      overflow-x: auto;
+    }
+    .hidden-section,
+    footer,
+    header { display: none; }
+    @media (max-width: 900px) {
+      main { padding: 14px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <h2>1. 总体路线决策</h2>
+      <div class="mermaid">
+flowchart TD
+    A["现有控制链路"] --> AO["AO / Phi / Phase0Event"]
+    AO --> DMP["DMP 参考轨迹"]
+    DMP --> TC["TorqueController"]
+    TC --> TG["Torque_Guard"]
+    TG --> SAT["Saturation"]
+    SAT --> OUT["力矩输出"]
+
+    S["多源信号<br/>q_meas / dq_meas / q_ref / dq_ref<br/>tau_e / FeetLoad / Phi / Phase0Event"] --> AI["AI 低频状态识别层"]
+    AI --> START["步态启动状态识别"]
+    START --> TIMING["患侧助力时机预测"]
+    TIMING --> CONF["置信度判断"]
+    CONF --> EN["assist_enable / disable_reason"]
+    EN --> IFACE["MO_GiveTorque? 或助力使能接口"]
+    IFACE --> TG
+      </div>
+    </section>
+
+    <section>
+      <h2>2. 现有控制链路</h2>
+      <div class="mermaid">
+flowchart LR
+    AO["AO / 步态相位估计<br/>Phi, Phase0Event, FeetLoad"] --> DMP["DMP 参考轨迹生成<br/>Amplitude, tau, phase_offset<br/>q_ref, dq_ref"]
+    DMP --> TC["TorqueController<br/>PD / 阻抗控制<br/>MO_Kp, MO_Kd, MO_OverwriteKpGain<br/>tau_e"]
+    TC --> TG["Torque_Guard<br/>SafeTorque, FeetLoad, 关节限位"]
+    TG --> SAT["Saturation<br/>[-20, 20]"]
+    SAT --> OUT["力矩输出"]
+      </div>
+    </section>
+
+    <section>
+      <h2>3. 新增 AI 模块插入位置</h2>
+      <div class="mermaid">
+flowchart LR
+    AO["AO<br/>Phi / Phase0Event / FeetLoad"] --> DMP["DMP<br/>q_ref / dq_ref"]
+    DMP --> TC["TorqueController<br/>tau_e"]
+    SENSOR["传感器与人工输入<br/>q_meas, dq_meas<br/>FeetLoad_left, FeetLoad_right<br/>manual_enable"] --> PC["外部电脑 AI 模块<br/>步态启动识别与助力时机判定模块"]
+    AO --> PC
+    DMP --> PC
+    TC --> PC
+    PC --> O1["gait_start_state"]
+    PC --> O2["time_to_assist_event"]
+    PC --> O3["confidence"]
+    PC --> O4["assist_enable"]
+    PC --> O5["disable_reason"]
+    O4 --> SG["Speedgoat 接口<br/>MO_GiveTorque? 或助力使能接口"]
+    O5 --> SG
+    SG --> TC
+    TC --> TG["Torque_Guard"]
+    TG --> SAT["Saturation"]
+    SAT --> OUT["力矩输出"]
+      </div>
+    </section>
+
+    <section>
+      <h2>4. 多源输入信号</h2>
+      <div class="mermaid">
+flowchart TD
+    S1["q_meas, dq_meas"] --> F["特征构造器"]
+    S2["q_ref, dq_ref"] --> F
+    S3["tau_e"] --> F
+    S4["FeetLoad_left, FeetLoad_right"] --> F
+    S5["Phi, sin(Phi), cos(Phi)"] --> F
+    S6["Phase0Event"] --> F
+    S7["manual_enable"] --> F
+    F --> E1["e_q = q_ref - q_meas"]
+    F --> E2["e_dq = dq_ref - dq_meas"]
+    F --> E3["足底接触序列"]
+    F --> E4["相位进度与事件间隔"]
+    E1 --> W["300-500 ms 滑动窗口<br/>1 kHz 降采样到 100 或 200 Hz"]
+    E2 --> W
+    E3 --> W
+    E4 --> W
+    W --> M["TCN 时序主干网络"]
+      </div>
+    </section>
+
+    <section>
+      <h2>5. TCN + 注意力池化的步态启动识别与助力时机预测模型</h2>
+      <div class="mermaid">
+flowchart LR
+    X["窗口张量<br/>通道 x 时间"] --> C1["TCN 模块 1<br/>空洞一维卷积"]
+    C1 --> C2["TCN 模块 2<br/>残差连接 + 随机失活"]
+    C2 --> C3["TCN 模块 3<br/>更大空洞率"]
+    C3 --> ATT["注意力池化<br/>加权时序摘要"]
+    ATT --> H1["输出头 1<br/>步态启动状态分类<br/>gait_start_state"]
+    ATT --> H2["输出头 2<br/>患侧助力时机预测<br/>time_to_assist_event / assist_event_ready"]
+    ATT --> H3["输出头 3<br/>置信度 / 可靠性估计<br/>confidence / phase_reliability / foot_contact_reliability"]
+      </div>
+    </section>
+
+    <section>
+      <h2>状态定义</h2>
+      <div class="grid">
+        <div class="card"><strong>STAND</strong>站立准备</div>
+        <div class="card"><strong>AFFECTED_STEP_INIT</strong>患侧先迈</div>
+        <div class="card"><strong>HEALTHY_STEP</strong>健侧跟步</div>
+        <div class="card"><strong>GAIT_CONFIRMED</strong>进入交替行走</div>
+        <div class="card"><strong>AFFECTED_ASSIST_PHASE_READY</strong>患侧助力相位即将到达或已经到达</div>
+        <div class="card"><strong>ASSIST_ON</strong>助力已开启</div>
+        <div class="card"><strong>STOP</strong>停止或人工关闭</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. 标签生成流程</h2>
+      <div class="mermaid">
+flowchart TD
+    RAW["原始数据<br/>q, dq, FeetLoad, Phi, Phase0Event<br/>tau_e, manual_enable, assist_on_time"] --> STATE["步态启动状态标签<br/>gait_start_state"]
+    RAW --> ASSIST["助力事件时间<br/>assist_event_time"]
+    ASSIST --> TTA["距离助力事件时间<br/>time_to_assist_event"]
+    RAW --> PHASE["相位可靠性<br/>phase_reliability"]
+    RAW --> FOOT["足底接触可靠性<br/>foot_contact_reliability"]
+    STATE --> CONF["置信度标签<br/>confidence target"]
+    TTA --> CONF
+    PHASE --> CONF
+    FOOT --> CONF
+      </div>
+    </section>
+
+    <section>
+      <h2>7. 实验验证流程</h2>
+      <div class="mermaid">
+flowchart LR
+    D1["离线起步任务数据"] --> D2["降采样 + 窗口切片 + 标签"]
+    D2 --> T["模型训练<br/>TCN 多任务学习"]
+    T --> E["离线评估<br/>状态分类 / 时间预测 / 置信度校准"]
+    E --> S["Simulink 回放<br/>assist_enable 对比人工标注时机"]
+    S --> W["低风险穿戴验证<br/>站立准备、患侧先迈、健侧跟步、进入行走"]
+      </div>
+    </section>
+
+    <section>
+      <h2>8. 助力时机判定与使能输出逻辑</h2>
+      <div class="mermaid">
+flowchart TD
+    P["模型输出<br/>gait_start_state<br/>time_to_assist_event<br/>confidence<br/>phase_reliability<br/>foot_contact_reliability"] --> R["规则确认"]
+    R --> C1{"是否完成<br/>患侧先迈 -> 健侧跟步 -> 进入下一步？"}
+    C1 -->|否| D0["assist_enable = 0<br/>disable_reason = startup_sequence_incomplete"]
+    C1 -->|是| C2{"是否接近患侧助力介入相位？"}
+    C2 -->|否| D1["assist_enable = 0<br/>disable_reason = assist_phase_not_ready"]
+    C2 -->|是| C3{"manual_enable 是否为真？"}
+    C3 -->|否| D2["assist_enable = 0<br/>disable_reason = manual_disabled"]
+    C3 -->|是| C4{"confidence 与可靠性是否超过阈值？"}
+    C4 -->|否| D3["assist_enable = 0<br/>disable_reason = low_confidence_or_unreliable_phase"]
+    C4 -->|是| C5{"q / dq / tau_e 是否无明显异常？"}
+    C5 -->|否| D4["assist_enable = 0<br/>disable_reason = signal_check_failed"]
+    C5 -->|是| EN["assist_enable = 1"]
+    EN --> SG["MO_GiveTorque? 或助力使能接口"]
+    D0 --> SG
+    D1 --> SG
+    D2 --> SG
+    D3 --> SG
+    D4 --> SG
+    SG --> TG["Torque_Guard"]
+    TG --> SAT["Saturation"]
+    SAT --> OUT["力矩输出"]
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

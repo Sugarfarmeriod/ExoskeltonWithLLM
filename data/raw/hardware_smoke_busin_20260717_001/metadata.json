@@ -1,0 +1,367 @@
+{
+  "trial_id": "hardware_smoke_busin_20260717_001",
+  "application": "TestStructure",
+  "target_name": "TargetPC1",
+  "import_time": "2026-07-17 15:09:15 +0800",
+  "source_start_date": "2015-06-30 14:53:21",
+  "source_size_mb": 5.738983154296875,
+  "subject_id": "",
+  "affected_side": "",
+  "parameter_snapshot_path": "",
+  "filelog_run_id": 3450,
+  "dataset_mat": "D:\\Workspace\\projects\\codex\\ExoskeltonWithLLM\\data\\raw\\hardware_smoke_busin_20260717_001\\filelog_dataset.mat",
+  "signals_long_csv": "D:\\Workspace\\projects\\codex\\ExoskeltonWithLLM\\data\\raw\\hardware_smoke_busin_20260717_001\\signals_long.csv",
+  "signals_wide_csv": "D:\\Workspace\\projects\\codex\\ExoskeltonWithLLM\\data\\raw\\hardware_smoke_busin_20260717_001\\signals_wide_if_aligned.csv",
+  "signals_are_time_aligned": true,
+  "signal_count": 58,
+  "signals": [
+    {
+      "name": "BusIn:1.LeftShoulderMotorActuralPosition",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorActuralVelocity",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorActuralTorque",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorDCLinkCircuitVoltage",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorActuralPosition",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorActuralVelocity",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorActuralTorque",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorDCLinkCircuitVoltage",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorActuralPosition",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorActuralVelocity",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorActuralTorque",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorDCLinkCircuitVoltage",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorActuralPosition",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorActuralVelocity",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorActuralTorque",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorDCLinkCircuitVoltage",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorSensorADCh1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorSensorADCh2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorSensorIMUq0",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorSensorIMUq1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorSensorIMUq2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftShoulderMotorSensorIMUq3",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorSensorADCh1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorSensorADCh2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorSensorIMUq0",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorSensorIMUq1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorSensorIMUq2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightShoulderMotorSensorIMUq3",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorSensorADCh1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorSensorADCh2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorSensorIMUq0",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorSensorIMUq1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorSensorIMUq2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipMotorSensorIMUq3",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorSensorADCh1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorSensorADCh2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorSensorIMUq0",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorSensorIMUq1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorSensorIMUq2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipMotorSensorIMUq3",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.WaistSensorADCh1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.WaistSensorADCh2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.WaistSensorIMUq0",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.WaistSensorIMUq1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.WaistSensorIMUq2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.WaistSensorIMUq3",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipSensorADCh1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipSensorADCh2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipSensorIMUq0",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipSensorIMUq1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipSensorIMUq2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.LeftHipSensorIMUq3",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipSensorADCh1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipSensorADCh2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipSensorIMUq0",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipSensorIMUq1",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipSensorIMUq2",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    },
+    {
+      "name": "BusIn:1.RightHipSensorIMUq3",
+      "sample_count": 12537,
+      "start_time": 17.464,
+      "end_time": 30
+    }
+  ]
+}

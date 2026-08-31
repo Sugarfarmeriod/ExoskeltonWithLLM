@@ -1,0 +1,74 @@
+﻿[
+    {
+        "title":  "A Two-Layer Human-in-the-Loop Optimization Framework for Customizing Lower-Limb Exoskeleton Assistance",
+        "doi":  "10.23919/acc55779.2023.10155858",
+        "publisher_url":  "https://doi.org/10.23919/acc55779.2023.10155858",
+        "suggested_filename":  "2023_A_Two-Layer_Human-in-the-Loop_Optimization_Framework_for_Customizing_L_10.23919_acc55779.2023.10155858.pdf"
+    },
+    {
+        "title":  "Ultra-Robust Real-Time Estimation of Gait Phase",
+        "doi":  "10.1109/tnsre.2022.3207919",
+        "publisher_url":  "https://doi.org/10.1109/tnsre.2022.3207919",
+        "suggested_filename":  "2022_Ultra-Robust_Real-Time_Estimation_of_Gait_Phase_10.1109_tnsre.2022.3207919.pdf"
+    },
+    {
+        "title":  "Framework for Personalizing Wearable Devices Using Real-Time Physiological Measures",
+        "doi":  "10.1109/access.2023.3299873",
+        "publisher_url":  "https://doi.org/10.1109/access.2023.3299873",
+        "suggested_filename":  "2023_Framework_for_Personalizing_Wearable_Devices_Using_Real-Time_Physiolog_10.1109_access.2023.3299873.pdf"
+    },
+    {
+        "title":  "Review on Control Strategies for Lower Limb Rehabilitation Exoskeletons",
+        "doi":  "10.1109/access.2021.3110595",
+        "publisher_url":  "https://doi.org/10.1109/access.2021.3110595",
+        "suggested_filename":  "2021_Review_on_Control_Strategies_for_Lower_Limb_Rehabilitation_Exoskeleton_10.1109_access.2021.3110595.pdf"
+    },
+    {
+        "title":  "Learning to Assist Different Wearers in Multitasks: Efficient and Individualized Human-in-the-Loop Adaptation Framework for Lower-Limb Exoskeleton",
+        "doi":  "10.1109/tro.2024.3468768",
+        "publisher_url":  "https://doi.org/10.1109/tro.2024.3468768",
+        "suggested_filename":  "2024_Learning_to_Assist_Different_Wearers_in_Multitasks_Efficient_and_Indiv_10.1109_tro.2024.3468768.pdf"
+    },
+    {
+        "title":  "Learning Physical Human–Robot Interaction With Coupled Cooperative Primitives for a Lower Exoskeleton",
+        "doi":  "10.1109/tase.2018.2886376",
+        "publisher_url":  "https://doi.org/10.1109/tase.2018.2886376",
+        "suggested_filename":  "2019_Learning_Physical_HumanRobot_Interaction_With_Coupled_Cooperative_Prim_10.1109_tase.2018.2886376.pdf"
+    },
+    {
+        "title":  "Learning Cooperative Primitives with physical Human-Robot Interaction for a HUman-powered Lower EXoskeleton",
+        "doi":  "10.1109/iros.2016.7759787",
+        "publisher_url":  "https://doi.org/10.1109/iros.2016.7759787",
+        "suggested_filename":  "2016_Learning_Cooperative_Primitives_with_physical_Human-Robot_Interaction__10.1109_iros.2016.7759787.pdf"
+    },
+    {
+        "title":  "Adaptive CPG-Based Impedance Control for Assistive Lower Limb Exoskeleton",
+        "doi":  "10.1109/robio.2018.8664912",
+        "publisher_url":  "https://doi.org/10.1109/robio.2018.8664912",
+        "suggested_filename":  "2018_Adaptive_CPG-Based_Impedance_Control_for_Assistive_Lower_Limb_Exoskele_10.1109_robio.2018.8664912.pdf"
+    },
+    {
+        "title":  "A Bio-Signal Enhanced Adaptive Impedance Controller for Lower Limb Exoskeleton",
+        "doi":  "10.1109/icra40945.2020.9196774",
+        "publisher_url":  "https://doi.org/10.1109/icra40945.2020.9196774",
+        "suggested_filename":  "2020_A_Bio-Signal_Enhanced_Adaptive_Impedance_Controller_for_Lower_Limb_Exo_10.1109_icra40945.2020.9196774.pdf"
+    },
+    {
+        "title":  "DMP-Based Motion Generation for a Walking Exoskeleton Robot Using Reinforcement Learning",
+        "doi":  "10.1109/tie.2019.2916396",
+        "publisher_url":  "https://doi.org/10.1109/tie.2019.2916396",
+        "suggested_filename":  "2019_DMP-Based_Motion_Generation_for_a_Walking_Exoskeleton_Robot_Using_Rein_10.1109_tie.2019.2916396.pdf"
+    },
+    {
+        "title":  "Human-in-the-Loop Optimization for Knee Exoskeleton Flexion Assistance",
+        "doi":  "10.1109/lra.2025.3526558",
+        "publisher_url":  "https://doi.org/10.1109/lra.2025.3526558",
+        "suggested_filename":  "2025_Human-in-the-Loop_Optimization_for_Knee_Exoskeleton_Flexion_Assistance_10.1109_lra.2025.3526558.pdf"
+    },
+    {
+        "title":  "Passive Knee Exoskeleton Increases Vertical Jump Height",
+        "doi":  "10.1109/tnsre.2022.3187056",
+        "publisher_url":  "https://doi.org/10.1109/tnsre.2022.3187056",
+        "suggested_filename":  "2022_Passive_Knee_Exoskeleton_Increases_Vertical_Jump_Height_10.1109_tnsre.2022.3187056.pdf"
+    }
+]

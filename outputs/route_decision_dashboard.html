@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MS-TGSS 技术路线看板</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      mermaid.initialize({
+        startOnLoad: true,
+        securityLevel: "loose",
+        theme: "base",
+        themeVariables: {
+          primaryColor: "#eef6ff",
+          primaryTextColor: "#172033",
+          primaryBorderColor: "#2f6f9f",
+          lineColor: "#667085",
+          secondaryColor: "#f1f8f4",
+          tertiaryColor: "#fff8e8",
+          fontFamily: "Inter, Microsoft YaHei, Segoe UI, Arial, sans-serif"
+        }
+      });
+    });
+  </script>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --blue: #2463a6;
+      --green: #16824a;
+      --amber: #b26a00;
+      --red: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    header {
+      display: none;
+      padding: 28px 34px;
+      background: #172033;
+      color: #fff;
+      border-bottom: 5px solid #4f9f6f;
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: 0; }
+    .subtitle { margin: 0; max-width: 1180px; color: #d7dee8; }
+    .badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 13px;
+      border-radius: 6px;
+      background: #effaf3;
+      color: #0f5132;
+      border: 1px solid #a7d7b8;
+      font-weight: 800;
+    }
+    main { max-width: 1320px; margin: 0 auto; padding: 24px; }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 22px rgba(16, 24, 40, 0.06);
+    }
+    h2 { margin: 0 0 14px; font-size: 20px; }
+    h3 { margin: 16px 0 8px; font-size: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcfe;
+      min-height: 132px;
+    }
+    .card strong { display: block; margin-bottom: 6px; color: var(--blue); }
+    .card p { margin: 0; color: var(--muted); }
+    .mermaid {
+      background: #fbfcfe;
+      border: 1px solid #e5eaf2;
+      border-radius: 8px;
+      padding: 14px;
+      overflow-x: auto;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px; vertical-align: top; }
+    th { background: #eef3f8; text-align: left; }
+    .pill { display: inline-block; border-radius: 999px; padding: 3px 9px; font-size: 12px; font-weight: 700; }
+    .ok { background: #e8f7ee; color: var(--green); }
+    .mid { background: #fff3d7; color: var(--amber); }
+    .no { background: #ffe9e7; color: var(--red); }
+    .hidden-section { display: none; }
+    ul { margin: 8px 0 0 20px; padding: 0; }
+    code { background: #eef2f7; padding: 2px 5px; border-radius: 4px; }
+    footer { display: none; color: var(--muted); font-size: 13px; padding: 6px 0 26px; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      main { padding: 14px; }
+      header { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MS-TGSS 技术路线看板</h1>
+  </header>
+
+  <main>
+    <section class="hidden-section" aria-hidden="true">
+      <h2>路线压缩结论</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>主线做什么</strong>
+          <p>在 <code>TorqueController</code> 和 <code>Torque_Guard</code> 之间加入时序安全监督器，输出 <code>risk_level</code> 与 <code>gate_gain</code>，不替代原控制器。</p>
+        </div>
+        <div class="card">
+          <strong>DMP 参数怎么用</strong>
+          <p>只在风险持续出现时提出小幅、低频、有边界的参数修正建议，更新仍受人工确认、安全规则和原限幅链路约束。</p>
+        </div>
+        <div class="card">
+          <strong>语义输入放哪里</strong>
+          <p>治疗师自然语言目标单独作为远期高层接口，映射到受限参数建议，不进入本阶段实时安全监督闭环。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>1. 总体路线决策</h2>
+      <div class="mermaid">
+flowchart TD
+    A["现有基础<br/>AO / Phi / Phase0Event<br/>DMP 参考轨迹<br/>PD/阻抗力矩<br/>Torque_Guard + 限幅"] --> B["当前工程主线<br/>多源时序状态识别<br/>异常风险感知安全门控"]
+    B --> C["插入位置<br/>TorqueController 之后<br/>Torque_Guard 之前"]
+    C --> D["输出<br/>步态状态 gait_state<br/>异常类型 anomaly_type<br/>风险等级 risk_level<br/>门控增益 gate_gain"]
+    D --> E["规则约束安全层<br/>SafeTorque / 跟踪误差<br/>FeetLoad / Phase0Event 周期"]
+    E --> F["tau_gate = gate_gain_final * tau_e"]
+    F --> G["Torque_Guard<br/>限幅 Saturation<br/>力矩输出"]
+    B --> H["低频参数修正层<br/>Amplitude / phase_offset<br/>MO_Kp / MO_Kd<br/>MO_OverwriteKpGain / SafeTorque"]
+    H --> I["有界、低频、人工可审计<br/>不绕过 Torque_Guard"]
+    A --> J["远期高层接口<br/>治疗师自然语言目标"]
+    J --> K["语义解析到参数建议<br/>人工确认后更新"]
+      </div>
+    </section>
+
+    <section>
+      <h2>2. 现有控制链路</h2>
+      <div class="mermaid">
+flowchart LR
+    AO["AO / 步态相位估计<br/>Phi, Phase0Event, FeetLoad"] --> DMP["DMP 参考轨迹生成<br/>Amplitude, tau, phase_offset<br/>q_ref, dq_ref"]
+    DMP --> TC["TorqueController<br/>PD / 阻抗控制<br/>MO_Kp, MO_Kd, MO_OverwriteKpGain<br/>tau_e"]
+    TC --> TG["Torque_Guard<br/>SafeTorque, FeetLoad, 关节限位"]
+    TG --> SAT["限幅 Saturation<br/>[-20, 20]"]
+    SAT --> OUT["力矩输出"]
+      </div>
+    </section>
+
+    <section>
+      <h2>3. 新增 AI 模块插入位置</h2>
+      <div class="mermaid">
+flowchart LR
+    AO["AO<br/>Phi / Phase0Event / FeetLoad"] --> DMP["DMP<br/>q_ref / dq_ref"]
+    DMP --> TC["TorqueController<br/>tau_e"]
+    TC --> AI["多源时序安全监督器<br/>TCN + 注意力池化 + 多任务输出头"]
+    AI --> GATE["规则约束安全层<br/>最终增益 = min(预测增益, 规则增益)"]
+    GATE --> TAU["tau_gate = gate_gain_final * tau_e"]
+    TAU --> TG["Torque_Guard"]
+    TG --> SAT["限幅 Saturation"]
+    SAT --> OUT["力矩输出"]
+      </div>
+    </section>
+
+    <section>
+      <h2>4. 多源输入信号</h2>
+      <div class="mermaid">
+flowchart TD
+    S1["q_meas, dq_meas"] --> F["特征构造器"]
+    S2["q_ref, dq_ref"] --> F
+    S3["tau_e"] --> F
+    S4["FeetLoad_left, FeetLoad_right"] --> F
+    S5["Phi, sin(Phi), cos(Phi)"] --> F
+    S6["Phase0Event"] --> F
+    F --> E1["e_q = q_ref - q_meas"]
+    F --> E2["e_dq = dq_ref - dq_meas"]
+    F --> E3["移动均方根 / 峰值 / 斜率"]
+    E1 --> W["300-500 ms 滑动窗口<br/>1 kHz 降采样到 100 或 200 Hz"]
+    E2 --> W
+    E3 --> W
+    W --> M["TCN 时序主干网络"]
+      </div>
+    </section>
+
+    <section>
+      <h2>5. TCN + 注意力池化 + 多任务输出模型结构</h2>
+      <div class="mermaid">
+flowchart LR
+    X["窗口张量<br/>通道 x 时间"] --> C1["TCN 模块 1<br/>空洞一维卷积"]
+    C1 --> C2["TCN 模块 2<br/>残差连接 + 随机失活"]
+    C2 --> C3["TCN 模块 3<br/>更大空洞率"]
+    C3 --> ATT["注意力池化<br/>加权时序摘要"]
+    ATT --> H1["步态状态输出头<br/>支撑期 / 摆动期 / 过渡期"]
+    ATT --> H2["异常类型输出头<br/>正常 / 相位错配 / 跟踪误差<br/>力矩风险 / 足底负载不一致 / 传感器故障"]
+    ATT --> H3["风险等级输出头<br/>正常 / 注意 / 危险"]
+    ATT --> H4["门控增益输出头<br/>连续 0..1 或 {1.0, 0.5, 0.0}"]
+      </div>
+    </section>
+
+    <section>
+      <h2>6. 标签生成流程</h2>
+      <div class="mermaid">
+flowchart TD
+    RAW["行走记录数据<br/>q, dq, ref, tau_e, FeetLoad, Phi, Phase0Event"] --> CONTACT["FeetLoad 弱标签<br/>支撑期 / 摆动期"]
+    RAW --> EVENT["Phase0Event 事件标签<br/>周期边界与过渡期"]
+    RAW --> ERR["跟踪误差规则<br/>e_q, e_dq, tau_e 峰值"]
+    RAW --> INJ["合成异常注入<br/>信号丢失、误触发、相位偏移、力矩尖峰"]
+    CONTACT --> GS["步态状态标签"]
+    EVENT --> GS
+    ERR --> AT["异常类型标签"]
+    INJ --> AT
+    AT --> RISK["风险等级标签<br/>正常 / 注意 / 危险"]
+    ERR --> RISK
+    RISK --> GATE["门控增益目标<br/>正常 1.0，注意 0.3-0.7，危险 0.0"]
+      </div>
+    </section>
+
+    <section>
+      <h2>7. 实验验证流程</h2>
+      <div class="mermaid">
+flowchart LR
+    D1["离线记录数据"] --> D2["降采样 + 窗口切片 + 标签"]
+    D2 --> D3["异常注入"]
+    D3 --> T["模型训练<br/>TCN 多任务学习"]
+    T --> E["离线评估<br/>F1 / 检测延迟 / 误报警"]
+    E --> S["Simulink 回放<br/>tau_e 对比 tau_gate"]
+    S --> W["低风险穿戴验证<br/>正常行走、启停、变速"]
+      </div>
+    </section>
+
+    <section>
+      <h2>8. 安全门控逻辑</h2>
+      <div class="mermaid">
+flowchart TD
+    P["模型输出<br/>risk_level, gate_gain_pred"] --> R1["预测门控"]
+    SAFE["规则输入<br/>SafeTorque, abs(tau_e), e_q/e_dq<br/>FeetLoad 一致性, Phase0Event 周期"] --> R2["规则门控增益 gate_gain_rule"]
+    R1 --> MIN["最终门控增益 = min(预测增益, 规则增益)"]
+    R2 --> MIN
+    MIN --> DANGER{"风险等级 = 危险？"}
+    DANGER -->|是| ZERO["gate_gain_final = 0"]
+    DANGER -->|否| CAUTION{"风险等级 = 注意？"}
+    CAUTION -->|是| MID["限制在 0.3-0.7"]
+    CAUTION -->|否| ONE["正常状态允许不超过 1.0"]
+    ZERO --> TAU["tau_gate = gate_gain_final * tau_e"]
+    MID --> TAU
+    ONE --> TAU
+    TAU --> TG["Torque_Guard + Saturation"]
+      </div>
+    </section>
+
+    <section class="hidden-section" aria-hidden="true">
+      <h2>9. 可行性对比矩阵</h2>
+      <div class="mermaid">
+quadrantChart
+    title 工程可行性与当前价值
+    x-axis "低当前价值" --> "高当前价值"
+    y-axis "低落地性" --> "高落地性"
+    quadrant-1 "优先落地"
+    quadrant-2 "谨慎增强"
+    quadrant-3 "不进入当前实现"
+    quadrant-4 "后续观察"
+    "多源状态识别与安全门控": [0.86, 0.88]
+    "DMP/阻抗参数低频修正": [0.70, 0.58]
+    "治疗师语义输入": [0.46, 0.35]
+    "AI直接实时力矩控制": [0.20, 0.18]
+    "重写Speedgoat主链路": [0.18, 0.12]
+      </div>
+      <table>
+        <thead><tr><th>方向</th><th>当前实现位置</th><th>落地性</th><th>主要输出</th><th>本阶段处理方式</th></tr></thead>
+        <tbody>
+          <tr><td>多源状态识别与安全门控</td><td>TorqueController 与 Torque_Guard 之间</td><td><span class="pill ok">高</span></td><td><code>gait_state</code>, <code>anomaly_type</code>, <code>risk_level</code>, <code>gate_gain</code></td><td>主线实现</td></tr>
+          <tr><td>DMP/阻抗参数低频修正</td><td>步态周期级或试次级参数入口</td><td><span class="pill mid">中</span></td><td><code>Amplitude</code>, <code>phase_offset</code>, <code>MO_Kp</code>, <code>MO_Kd</code>, <code>SafeTorque</code> 的小幅建议</td><td>作为同一系统的扩展层</td></tr>
+          <tr><td>治疗师语义输入</td><td>Speedgoat 外层人机交互入口</td><td><span class="pill mid">后续</span></td><td>受限参数建议</td><td>单独放远期接口</td></tr>
+          <tr><td>AI 直接实时力矩控制</td><td>替代 TorqueController</td><td><span class="pill no">不做</span></td><td>torque command</td><td>排除</td></tr>
+          <tr><td>重写 Speedgoat 主链路</td><td>AO/DMP/控制器整体替换</td><td><span class="pill no">不做</span></td><td>新控制架构</td><td>排除</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="hidden-section" aria-hidden="true">
+      <h2>10. 最终推荐技术路线</h2>
+      <div class="mermaid">
+flowchart TD
+    A["最小可行版本<br/>CSV/MAT 导出数据<br/>100/200 Hz 窗口数据集"] --> B["TCN + 注意力池化多任务模型"]
+    B --> C["离线状态识别与异常检测"]
+    C --> D["规则约束安全层<br/>gate_gain_final"]
+    D --> E["Simulink 回放<br/>tau_e 对比 tau_gate"]
+    E --> F["低风险穿戴验证<br/>正常行走 / 启停 / 变速"]
+    F --> G["论文主图<br/>MS-TGSS 插入现有 DMP-阻抗控制链路"]
+    D --> H["扩展层<br/>注意状态持续多周期时<br/>小幅参数修正建议"]
+    H --> I["人工确认 + 边界检查<br/>下一窗口或下一试次生效"]
+    G --> J["远期接口<br/>治疗师自然语言目标到参数建议"]
+      </div>
+    </section>
+
+    <section class="hidden-section" aria-hidden="true">
+      <h2>实验集合</h2>
+      <div class="grid">
+        <div class="card"><strong>实验 A：离线状态识别</strong><p>正常行走数据；识别支撑期、摆动期、过渡期；指标为准确率、宏平均 F1、混淆矩阵。</p></div>
+        <div class="card"><strong>实验 B：异常注入检测</strong><p>注入 FeetLoad 信号丢失、Phase0Event 丢失或误触发、Phi 相位偏移、跟踪错配、tau_e 力矩尖峰；指标为精确率、召回率、F1、误报警率、检测延迟。</p></div>
+        <div class="card"><strong>实验 C：Simulink 回放门控</strong><p>对比原始 tau_e 和 tau_gate；指标为峰值力矩降低量、门控响应延迟、正常状态力矩保留率。</p></div>
+        <div class="card"><strong>实验 D：低风险穿戴验证</strong><p>正常行走、启停、变速；不做人为危险扰动；指标为 gate_gain 正常保持率、误触发率、RMSE/PCC、交互力矩平滑性。</p></div>
+      </div>
+    </section>
+
+    <footer></footer>
+  </main>
+</body>
+</html>

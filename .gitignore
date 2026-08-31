@@ -1,0 +1,10 @@
+# Reference paper bodies and extracted full-text cache
+/papers/
+/outputs/text_cache/
+
+# Raw, potentially sensitive experiment imports
+/data/inbox/
+
+# Python caches
+__pycache__/
+*.py[cod]

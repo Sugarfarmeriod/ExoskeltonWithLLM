@@ -1,0 +1,49 @@
+# Rejected or Low Priority
+
+- **A Two-Layer Human-in-the-Loop Optimization Framework for Customizing Lower-Limb Exoskeleton Assistance** (2023) | score=115 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 MO_Kp/MO_Kd；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器；涉及本研究不使用的 EMG/IMU，仅作方法参考，不作为直接实现模板
+- **A Two-Layer Human-in-the-Loop Optimization Framework for Customizing Lower-Limb Exoskeleton Assistance** (2023) | score=115 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 MO_Kp/MO_Kd；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器；涉及本研究不使用的 EMG/IMU，仅作方法参考，不作为直接实现模板
+- **Human-in-the-loop Optimisation in Robot-assisted Gait Training** (2025) | score=99 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **A Two-Layer Human-in-the-Loop Optimization Framework for Customizing Lower-Limb Exoskeleton Assistance** (2023) | score=94 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 MO_Kp/MO_Kd；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Simulating human-in-the-loop optimization of exoskeleton assistance to compare optimization algorithm performance** (2024) | score=80 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器；涉及本研究不使用的 EMG/IMU，仅作方法参考，不作为直接实现模板
+- **Dynamic movement primitives in robotics: A tutorial survey** (2023) | score=73 | role=轨迹生成器/学习器 | 可映射到 MO_Kp/MO_Kd；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Comprehensive Comparative Analysis of Lower Limb Exoskeleton Research: Control, Design, and Application** (2025) | score=72 | role=状态估计器 | 可增强 AO/Phi/Phase0Event 或足底负重/意图估计；可映射到 MO_Kp/MO_Kd；可映射到 AO/Phi/Phase0Event 与 phase_offset；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器；涉及本研究不使用的 EMG/IMU，仅作方法参考，不作为直接实现模板
+- **Comprehensive Comparative Analysis of Lower Limb Exoskeleton Research: Control, Design, and Application** (2025) | score=72 | role=状态估计器 | 可增强 AO/Phi/Phase0Event 或足底负重/意图估计；可映射到 MO_Kp/MO_Kd；可映射到 AO/Phi/Phase0Event 与 phase_offset；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器；涉及本研究不使用的 EMG/IMU，仅作方法参考，不作为直接实现模板
+- **Review on Control Strategies for Lower Limb Rehabilitation Exoskeletons** (2021) | score=71 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 MO_Kp/MO_Kd；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Human-in-the-loop optimization of active plantarflexion exoskeleton assistance for one individual with chronic stroke** (2019) | score=71 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Optimization and evaluation of lower limb exoskeleton based on human-exo coupling dynamics** (2025) | score=67 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 MO_Kp/MO_Kd；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器；涉及本研究不使用的 EMG/IMU，仅作方法参考，不作为直接实现模板
+- **Human-In-The-Loop Optimization Of Knee Exoskeleton Assistance For Minimizing User’s Metabolic And Muscular Effort** (2024) | score=64 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **The Effects of Incline Level on Optimized Lower-Limb Exoskeleton Assistance** (2021) | score=64 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Simplifying rehabilitation control of lower-limb exoskeletons in five ambulation modes via dataset-driven state-machine calibration** (2026) | score=63 | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式；可映射到 MO_Kp/MO_Kd；可映射到 AO/Phi/Phase0Event 与 phase_offset；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **ANFIS to estimate damping coefficient from EMG to optimize the interaction force** (2016) | score=58 | role=控制器/阻抗自适应 | 可映射到 MO_Kp/MO_Kd；可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器；涉及本研究不使用的 EMG/IMU，仅作方法参考，不作为直接实现模板
+- **Gait-event-based synchronization and control of a compact portable knee—ankle—foot exoskeleton robot for gait rehabilitation** (2018) | score=57 | role=高层语义/治疗师输入接口 | 语义方向缺少到控制参数的直接映射，只适合相关工作/未来展望
+- **Virtual Technician: A multi-modal interface facilitating therapists' adoption of rehab robots** (2026) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **LLM-Enabled Incremental Learning Framework for Hand Exoskeleton Control** (2025) | score=15 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **A Semantic-Aware Framework for Safe and Intent-Integrative Assistance in Upper-Limb Exoskeletons** (2025) | score=22 | role=高层语义/治疗师输入接口 | 可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Do As I Can, Not As I Say: Grounding Language in Robotic Affordances** (2023) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Code as Policies: Language Model Programs for Embodied Control** (2023) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **ProgPrompt: Generating Situated Robot Task Plans using Large Language Models** (2023) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Inner Monologue: Embodied Reasoning through Planning with Language Models** (2023) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control** (2023) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models** (2023) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **AHA: A Vision-Language-Model for Detecting and Reasoning Over Failures in Robotic Manipulation** (2024) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Enhancing Robotic Manipulation with AI Feedback from Multimodal Large Language Models** (2024) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Learning to Learn Faster from Human Feedback with Language Model Predictive Control** (2024) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **LLM-Guided Safety Agent for Edge Robotics with an ISO-Compliant Perception-Compute-Control Architecture** (2026) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Speech-Based Human-Exoskeleton Interaction for Lower Limb Motion Planning** (2023) | score=15 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Upper-Limb Rehabilitation with a Dual-Mode Individualized Exoskeleton Robot: A Generative-Model-Based Solution** (2024) | score=15 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **A novel gesture interaction control method for rehabilitation lower extremity exoskeleton** (2025) | score=15 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Plug in the Safety Chip: Enforcing Constraints for LLM-driven Robot Agents** (2024) | score=5 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Updating Robot Safety Representations Online From Natural Language Feedback** (2026) | score=9 | role=高层语义/治疗师输入接口 | 语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Model Mediated Teleoperation with a Hand-Arm Exoskeleton in Long Time Delays Using Reinforcement Learning** (2020) | score= | role=轨迹生成器/学习器 | 与外骨骼 AI 控制相关，但需要全文确认可接入性
+- **Shortcomings of human-in-the-loop optimization of an ankle-foot prosthesis emulator: a case series** (2021) | score= | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式
+- **A Pediatric Knee Exoskeleton With Real-Time Adaptive Control for Overground Walking in Ambulatory Individuals With Cerebral Palsy** (2021) | score= | role=待人工确认 | 与外骨骼 AI 控制相关，但需要全文确认可接入性
+- **Explaining Bayesian Optimization by Shapley Values Facilitates Human-AI Collaboration** (2024) | score= | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式
+- **Novel Design on Knee Exoskeleton with Compliant Actuator for Post-Stroke Rehabilitation** (2025) | score= | role=待人工确认 | 与外骨骼 AI 控制相关，但需要全文确认可接入性
+- **Design optimization platform for assistive wearable devices applied to a knee damper exoskeleton** (2025) | score= | role=参数优化器 | 最贴近低频优化 DMP/阻抗参数的接入方式
+- **Portable hip exoskeleton improves walking economy for stroke survivors** (2026) | score= | role=待人工确认 | 与外骨骼 AI 控制相关，但需要全文确认可接入性
+- **Therapist-exoskeleton-patient interaction for gait therapy** (2026) | score= | role=待人工确认 | 与外骨骼 AI 控制相关，但需要全文确认可接入性
+- **基于在线增量DMP的准直驱膝关节外骨骼自适应柔顺控制** (2026) | score= | role=轨迹生成器/学习器 | 与外骨骼 AI 控制相关，但需要全文确认可接入性
+- **A Semantic-Aware Framework for Safe and Intent-Integrative Assistance in Upper-Limb Exoskeletons** (2026) | score=28 | role=高层语义/治疗师输入接口 | 可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **EIC Framework for Hand Exoskeletons Based on a Multimodal Large Language Model** (2025) | score=5 | role=高层语义/治疗师输入接口 | 语义方向缺少到控制参数的直接映射，只适合相关工作/未来展望
+- **Interpretable Locomotion Prediction in Construction Using a Memory-Driven LLM Agent With Chain-of-Thought Reasoning** (2025) | score=17 | role=高层语义/治疗师输入接口 | 可映射到 DMP Amplitude 和 SafeTorque 约束；语义/治疗师输入可作为高层参数或模式选择接口，但优先级低于优化器和状态估计器
+- **Upper Limb Rehabilitation Robot Control based on Large Language Model** (2024) | score=0 | role=高层语义/治疗师输入接口 | 语义方向缺少到控制参数的直接映射，只适合相关工作/未来展望
