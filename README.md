@@ -31,31 +31,51 @@ ExoPilot 服务于外骨骼公司的研发与试验团队，而不是直接面�
 
 这不是一个“聊天机器人套壳”。Agent 的价值在于编排已经验证的工具、解释结构化结果和维护审计链，而不是凭语言能力猜测控制参数。
 
-## 一次试次如何流转
+## 为什么这是一个通用 Agent 工程项目
+
+ExoPilot 的业务对象是外骨骼，但工程骨架与客服、运维、投研或 Coding Agent 相同：理解目标、获取上下文、选择工具、校验结果、执行受限动作，并留下评测与追踪记录。
+
+| 企业 Agent 能力 | 常见业务 Agent | ExoPilot |
+| --- | --- | --- |
+| Context | 订单、知识库、代码仓库 | trial metadata、历史试次、参数快照 |
+| Tool Calling | CRM、搜索、工单 API | 步态分析、跟踪指标、力矩裕量、参数规则 |
+| Planning | 查询 → 判断 → 执行动作 | 校验 → 分析 → 安全裁决 → 生成建议 |
+| Structured Output | 工单、SQL、代码补丁 | `parameter_suggestion.json` |
+| Guardrail | 权限、金额、沙箱 | 数据质量、力矩阈值、参数白名单 |
+| Human-in-the-loop | 高风险操作审批 | 工程师确认下一试次参数 |
+| Eval & Trace | 任务成功率、调用轨迹 | trial → metric → rule → suggestion → approval |
+
+项目的可迁移价值不依赖外骨骼行业：核心工作是把领域专家的知识转化为 Agent 可安全调用的软件契约。外骨骼只是一个高约束的 vertical。
+
+## 目标 Agent Loop
 
 ```text
-足底压力 / AO / DMP / 阻抗控制器 / Torque_Guard
+工程师目标 / 穿戴者反馈
+           │
+           ▼
+   Agent 识别任务与试次
+           │
+           ├─ load_trial / check_data_quality
+           ├─ analyze_gait / compute_tracking_metrics
+           ├─ compute_torque_margin
+           └─ evaluate_parameter_policy
                          │
                          ▼
-                Speedgoat File Log
-                         │
-             MATLAB 归档与字段映射
+             确定性安全规则与参数白名单
                          │
                          ▼
-      Schema 校验 → 步态分析 → 安全规则裁决
+       指标 JSON → 参数建议 JSON → 诊断报告
                          │
                          ▼
-       gait_metrics.json
-       parameter_suggestion.json
-       diagnostic_report.md
+                   工程师审批
                          │
                          ▼
-               工程师审核下一试次方案
-                         │
-              人工确认后再写入控制系统
+        下一试次由现有 Simulink/Speedgoat 链路执行
 ```
 
 LLM 位于实时力矩环之外，按试次或步态窗口低频工作。它不能直接输出力矩，不能绕过 `Torque_Guard` 和 Saturation，也不能自动向 Speedgoat 写入参数。
+
+当前仓库已经实现从日志校验到诊断报告的确定性工具链；Agent 的自然语言入口、工具选择和多步编排仍属于下一阶段。
 
 ## 我在项目中负责什么
 
@@ -67,6 +87,20 @@ LLM 位于实时力矩环之外，按试次或步态窗口低频工作。它不�
 4. **Agent 工具**：实现校验、步态指标计算、受约束建议和诊断报告生成。
 5. **安全与治理**：为每条建议保留阈值、规则 ID、否决原因和人工确认标志。
 6. **工程验收**：使用 OpenSpec 固化需求，通过合成试次和聚焦测试验证主流程。
+
+## 真实团队中的协作边界
+
+小型企业的 MVP 团队只需要 3–5 个实际参与角色，Agent 专职开发由一人负责：
+
+| 角色 | 提供什么 | 不由 Agent 工程师替代的决策 |
+| --- | --- | --- |
+| 研发 / 控制负责人 | 业务目标、禁止动作、安全优先级 | 是否允许进入真实硬件试验 |
+| 控制工程师 | 指标定义、参数范围、DMP/阻抗规则 | 参数物理意义与允许调整幅度 |
+| 试验工程师 | Speedgoat 日志、信号质量、试次流程 | 数据是否可信、现场是否可执行 |
+| Applied AI / Agent Engineer | Schema、Tool、Workflow、Eval、Trace | 不擅自修改控制规则 |
+| QA / 伦理 / 法规（后期共享） | 人体试验与产品化要求 | 合规批准与发布决策 |
+
+我的角色是把专家给出的指标、规则和权限边界实现成可靠工具与 Agent 工作流；控制参数、硬件试验和合规结论由对应负责人确认。
 
 ## 当前能力
 
@@ -82,6 +116,22 @@ LLM 位于实时力矩环之外，按试次或步态窗口低频工作。它不�
 | LLM 工具注册与对话编排 | 设计中 | 复用现有 JSON 工具输出，不让模型读取原始长序列 |
 | 真实模型信号映射与阈值标定 | 待工程确认 | 见 `docs/open_decisions.md` |
 | 健康受试者验证 | 计划中 | 预计 8 人，协议、伦理与统计方案仍需正式确认 |
+
+## 如何验收 Agent
+
+Agent 不能只以“回答是否像人”来验收。本项目按完整执行轨迹定义评测：
+
+| Eval | 通过条件 | 当前状态 |
+| --- | --- | --- |
+| Data / Recovery | 缺字段、非数值或时间异常时停止分析并指出原因 | 已有聚焦测试 |
+| End-to-end | 合成试次稳定生成 metrics、suggestion、report 三类产物 | 已有回归测试 |
+| Safety | 力矩裕量不足或数据不可靠时 HOLD，不得增加助力 | 规则已实现，场景集待扩充 |
+| Traceability | 每条建议能回溯到源指标、阈值、规则 ID 和否决原因 | 已实现 |
+| Tool Selection | Agent 为任务选择正确工具，不调用无关工具 | 待 LLM 编排层 |
+| Tool Arguments | 只使用存在的 trial 和允许的参数，不幻觉参数值 | 待 LLM 编排层 |
+| Report Grounding | 报告不得包含结构化输入之外的控制结论 | 已有输入约束，待扩充评测集 |
+
+企业侧的成功指标将围绕单次试验分析工时、建议与专家判断一致率、可追溯率和安全违规次数建立基线；接入 LLM 后再增加任务成功率、延迟与调用成本。完成真实试次基线后补充量化收益。
 
 ## 安全设计
 
